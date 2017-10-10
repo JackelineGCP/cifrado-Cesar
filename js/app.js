@@ -1,30 +1,21 @@
-var encrypt = function(plaintext, shiftAmount) {
-    prompt('Ingrese el texto');
-    var ciphertext = "";
-    for(var i = 0; i < plaintext.length; i++) {
-        var plainCharacter = plaintext.charCodeAt(i);
-        if(plainCharacter >= 97 && plainCharacter <= 122) {
-            ciphertext += String.fromCharCode((plainCharacter - 97 + shiftAmount) % 26 + 97);
-        } else if(plainCharacter >= 65 && plainCharacter <= 90) {
-            ciphertext += String.fromCharCode((plainCharacter - 65 + shiftAmount) % 26 + 65);
-        } else {
-            ciphertext += String.fromCharCode(plainCharacter);
-        }
-    }
-    return ciphertext;
-}
+// creando la primera función llamada Cifrado
+function cipher (text){
+   var phrase = prompt("Ingrese una frase");
+   array = text.split(""); //convierte el texto a un array
+   newArray= array.splice(0,7);
+   dobleNewArray= array.concat(newArray); //Unimos arrays
+   finalText= dobleNewArray.join("");// Transformamos arrays a String
 
-var decrypt = function(ciphertext, shiftAmount) {
-    var plaintext = "";
-    for(var i = 0; i < ciphertext.length; i++) {
-        var cipherCharacter = ciphertext.charCodeAt(i);
-        if(cipherCharacter >= 97 && cipherCharacter <= 122) {
-            plaintext += String.fromCharCode((cipherCharacter - 97 - shiftAmount + 26) % 26 + 97);
-        } else if(cipherCharacter >= 65 && cipherCharacter <= 90) {
-            plaintext += String.fromCharCode((cipherCharacter - 65 - shiftAmount + 26) % 26 + 65);
-        } else {
-            plaintext += String.fromCharCode(cipherCharacter);
-        }
-    }
-    return plaintext;
+//Validamos, si tipo de texto es igual a una cadena String, devolver mensaje, sino error
+   if ( typeof(text) === typeof("h")){
+     return ("Texto original es " + text + "\n" + " texto cifrado es : "+ finalText);
+         }  return alert("Error");
+
+}
+cipher("abcdefgh")
+
+//Creando la segunda funcion llamada Decifrado
+function decipher (text1){
+  
+
 }
